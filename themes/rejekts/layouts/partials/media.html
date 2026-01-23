@@ -1,0 +1,41 @@
+<section class="video-content">
+{{ with .promo }}
+    <div class="event-schedule__title-wrapper">
+        <h2 class="event-schedule__title">A_look_back</h2>
+        <img src="/images/schedule-title-decoration.svg" alt="title decoration">
+    </div>
+    {{ partial "video.html" .video }}
+    {{- end -}}
+
+    {{- with .media -}}
+    </br></br>
+    {{ partial "flickr.html" . }}
+    {{- end -}}
+    {{/*  
+    <h2 class="video-content__title page-title">Photos from San Diego</h2>
+    <div class="video-content__wrapper embed-responsive embed-responsive-16by9">
+        <a data-flickr-embed="true" href="https://www.flickr.com/photos/181798830@N03/albums/72157711972795762"
+            title="Cloud Native Rejekts NA 2019">
+            <img src="https://live.staticflickr.com/65535/49132999793_5dbc6a9d19_z.jpg" width="640" height="480"
+                alt="Cloud Native Rejekts NA 2019"></a>
+        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    </div>
+
+    </div>
+    <h2 class="video-content__title page-title">Photos from Barcelona</h2>
+    <div class="video-content__wrapper embed-responsive embed-responsive-16by9">
+        <a data-flickr-embed="true" href="https://www.flickr.com/photos/181798830@N03/albums/72157708940353757"
+            title="Cloud Native Rejekts">
+            <img src="https://live.staticflickr.com/65535/48008092098_efd899bfb1_z.jpg" width="640"
+                alt="Cloud Native Rejekts">
+        </a>
+        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    </div>
+    <h2 class="video-content__title page-title">Videos from Barcelona</h2>
+    <div class="video-content__wrapper embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" width="1024" height="768"
+            src="https://www.youtube.com/embed/videoseries?list=PLnfCaIV4aZe_dqZVPDZ3duc65izvsdwSB" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen="">
+        </iframe>
+    </div>  */}}
+</section>

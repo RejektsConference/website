@@ -1,0 +1,128 @@
+.modal-content {
+  background: $black;
+  text-align: center;
+  max-width: 650px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: url('/images/podcast_bg.svg') no-repeat center 20%,
+              url('/images/podcast_bg2.svg') no-repeat center bottom,
+              $black;
+
+  @include media-breakpoint-down(xs) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  img.logo {
+    max-width: 230px;
+  }
+
+  .title-section {
+    margin-top: 2rem;
+
+    .title {
+      text-align: center;
+      background: $colorRed;
+      color: $white;
+      line-height: initial;
+      font-size: 3.5em;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      @include media-breakpoint-down(xs) {
+        font-size: 2.5em;
+      }
+
+      @include media-breakpoint-up(lg){
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    .title-top {
+      text-align: center;
+      color: $colorRed;
+      font-size: x-large;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .description {
+    font-size: medium;
+    color: $white;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    line-height: 1.9em;
+
+    @include media-breakpoint-down(xs) {
+      font-size: small;
+    }
+  }
+
+  a.link-button {
+    background: $colorRed;
+    color: $white;
+    transition: color 0.1s;
+    border: 2px solid $white;
+    min-height: 45px;
+    text-transform: none;
+
+    @include media-breakpoint-up(lg){
+      padding-left: 20px;
+      padding-right: 20px;
+      opacity: 1;
+      overflow: hidden;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  .subscribe {
+    margin-top: 10em;
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 5em;
+    }
+
+    .description {
+      font-size: small;
+    }
+
+    input[type=email], select {
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 2px solid $white;
+      box-sizing: border-box;
+      background: $black;
+      color: #808080;
+      font-size: 1.2em;
+
+      @include media-breakpoint-up(lg){
+        min-width: 233px;
+      }
+    }
+
+    .button--submit-white {
+      padding-top: 5px;
+    }
+
+    .button--submit {
+      position: relative;
+      background-color: $colorWhite;
+      color: $colorRed;
+    }
+
+    .mlform {
+      @include media-breakpoint-up(lg){
+        padding-left: 50px;
+      }
+    }
+  }
+}

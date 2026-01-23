@@ -1,0 +1,24 @@
+<section class="coc" id="conduct">
+    <div class="coc__title-wrapper">
+      <h2 class="coc__title">Code_of_Conduct</h2>
+      <img src="/images/title-decoration.svg" alt="title decoration">
+    </div>
+    <div class="coc__wrapper">
+      <div class="coc__image-wrapper">s
+        <div class="coc__picture">
+          <img class="" src="/images/photo-contact-desktop.jpg" width="820" height="1000" alt="man coding"
+            draggable="false">
+        </div>
+        <div class="coc__background-image">
+          <img src="/images/dots-desktop.svg" alt="background dots" draggable="false">
+        </div>
+      </div>
+      <div class="coc__text-wrapper">
+        {{ with .Site.GetPage "/code-of-conduct" }}
+        <p class="coc__description">{{ .Params.homepage_description }}</p>
+        {{ end }}
+        <a class="coc__link" href="/code-of-conduct">Read
+          our code of conduct</a>
+      </div>
+    </div>
+  </section>

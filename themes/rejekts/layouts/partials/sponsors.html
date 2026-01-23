@@ -1,0 +1,39 @@
+<section class="sponsor" id="sponsor">
+    <div class="sponsor__title-wrapper">
+        <h2 class="sponsor__title">Sponsors</h2>
+        <!-- <img src="/images/sponsor-title-decoration.svg" width="280" height="50" alt="title decoration"
+                draggable="false"> -->
+        <img src="/images/schedule-title-decoration.svg" alt="title decoration" draggable="false">
+    </div>
+    {{ with .event.sponsors }}
+    {{   if (gt (len .) 0) }}
+    {{     range . }}
+    <div class="sponsor_group">
+        <div class="sponsor__group-title">{{ .type }}</div>
+        <div class="row">
+            <div class="col">
+                <ul class="sponsor__list type-{{ lower .type }} list-inline">
+                    {{ range first 5 .sponsors }}
+                    <li class="sponsor__item list-inline-item">
+                        <a href="{{ .link }}" target="_blank" class="sponsor__image-link">
+                            <img src="/images/sponsors/{{ .logo }}" alt="{{ .logo }}" class="sponsor__image">
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{     end }}
+    {{   end }}
+    {{ end }}
+    {{- if not .event.sponsor.hide }}
+        <div class="sponsor__description">{{ .event.sponsor.pitch | markdownify }}</div>
+    {{- end }}
+
+    {{ if lt (time .event.schedule.datetime) now }}
+        <a class="sponsor__link" href="mailto:lexinadolski@microsoft.com">REACH OUT TO SUPPORT OUR NEXT EVENTS</a>
+    {{ else if not .event.sponsor.hide }}
+        <a class="sponsor__link" href="{{ .event.prospectus }}" target="_blank">Learn how to become a sponsor!</a>
+    {{ end }}
+</section>

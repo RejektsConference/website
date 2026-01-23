@@ -1,0 +1,6 @@
+<section class="about">
+    {{ $time := (time .event.schedule.datetime) }}
+    <div class="about__description">
+        {{ .event.description | markdownify }}
+    </div>
+</section>

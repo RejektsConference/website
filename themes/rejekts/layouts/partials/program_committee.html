@@ -1,0 +1,28 @@
+{{ if and (isset .Site.Data.program_committee "speakers") (gt (len .Site.Data.program_committee.speakers) 0) }}
+<section class="speakers" id="program_committee">
+    <div class="speakers__title-wrapper">
+        <h2 class="speakers__title">Program Committee </h2>
+        <img src="/images/speaker-title-bg.svg" alt="title decoration" />
+    </div>
+    <div class="speakers__swiper-container">
+        <div class="speakers__list swiper-wrapper">
+            {{ with .Site.Data.program_committee }}
+            {{ range .speakers }}
+            <div class="speakers__item swiper-slide">
+                <div class="speakers__photo-wrapper">
+                    <img class="speakers__photo" src="/images/speakers/{{ .image }}" width="260" height="260"
+                        alt="speaker photo" draggable="false" />
+                </div>
+                <img class="speakers__background" src="/images/speakers--triangl-bg.svg" alt="" />
+                <p class="speakers__name">{{ .name }}</p>
+                <p class="speakers__company">{{ .company }}</p>
+                <p class="speakers__position">{{ .position }}</p>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+        <div class="swiper-pagination"></div>
+        <!--   <a href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-na-los-angeles-hybrid-2021/speaker/" class="sponsor__link mx-auto">See the full list of speakers</a> -->
+    </div>
+</section>
+{{ end }}

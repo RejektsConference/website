@@ -1,0 +1,30 @@
+<section class="timer" datetime="{{ .event.schedule.datetime }}">
+    <div class="timer__wrapper">
+        <ul class="timer__list">
+            <li class="timer__item">
+                <div class="timer__days"></div>
+                <span>days</span>
+            </li>
+            <li class="timer__item">
+                <div class="timer__hours"></div>
+                <span>hours</span>
+            </li>
+            <li class="timer__item">
+                <div class="timer__minutes"></div>
+                <span>minutes</span>
+            </li>
+            <li class="timer__item">
+                <div class="timer__second"></div>
+                <span>seconds</span>
+            </li>
+        </ul>
+
+        {{- if eq .event.state "archived" -}}
+        <a class="timer__button button button--black" href="">Ticketing closed</a>
+        {{- else if .event.tickets_url -}}
+        <a class="timer__button button button--black" href="{{ .event.tickets_url }}">Get Your Tickets</a>
+        {{- else -}}
+        <a class="timer__button button button--black" href="">Tix available soon</a>
+        {{- end -}}
+    </div>
+</section>

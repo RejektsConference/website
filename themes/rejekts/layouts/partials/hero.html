@@ -1,0 +1,34 @@
+<section class="hero">
+    <div class="hero__wrapper">
+        <div class="hero__wrapper-inner">
+            {{ $time := (time .event.schedule.datetime) }}
+            {{ $numDays := (len .event.schedule.days) }}
+            {{- if eq $numDays 1 }}
+                <p class="hero__data">{{ printf "%s %d, %d" $time.Month $time.Day $time.Year }}</p>
+            {{- else }}
+                <p class="hero__data">{{ printf "%s %d-%d, %d" $time.Month $time.Day (add $time.Day (sub $numDays 1)) $time.Year }}</p>
+            {{- end }}
+            <h1 class="hero__title">{{ .hero.title }}</h1>
+            <p class="hero__hashtag">#rejekts{{ $time.Year }}</p>
+            {{ $location :=  printf "TBD - %s" .event.city }}
+            {{ if .event.venue.hide }}
+                <p class="hero__adress hero__adress--desktop">{{ $location }}</p>
+            {{ else }}
+                {{- $location = (replace $location "TBD" .event.venue.name) -}}
+                <a href="#venue"> <p class="hero__adress hero__adress--desktop">{{ $location }}</p> </a>
+            {{ end }}
+        </div>
+        <div class="hero__image-wrapper">
+            {{ $imagePath := printf "/images/%s/X-image.png" .event.code }}
+            {{ if fileExists (printf "static%s" $imagePath) }}
+                <img class="hero__image" src="{{ $imagePath }}" width="430" height="422" alt="photo of City">
+            {{ end }}
+            <img class="hero__background-dots" src="/images/hero-bg-dots-desktop.svg" alt="background dots">
+            <picture>
+                <source srcset="/images/x-desktop-icon.svg" media="(min-width: 768px)">
+                <img class="hero__background-x" src="/images/x-mobile-icon.svg" alt="background x">
+            </picture>
+        </div>
+    </div>
+    <p class="hero__adress hero__adress--mobile">{{ $location }}</p>
+</section>

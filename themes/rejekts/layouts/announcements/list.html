@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <section class="news" style="margin-top: 200px;">
+    <div class="news__title-wrapper">
+      <h2 class="news__title">Announcements</h2>
+      <img src="/images/title-decoration.svg" alt="title decoration">
+    </div>
+    {{- with (.Page).OutputFormats.Get "rss" -}}
+    <div class="news__rss"><a href="{{ .Permalink }}">RSS</a></div>
+    {{- end -}}
+    <div class="news__swiper-container">
+      {{- range .Pages | first 3 -}}
+        {{- if .Content -}}
+          <div class="news__item">
+            <p><b>{{ .Title }}:</b>{{ .Summary }} <a href="{{ .Permalink }}">Read more</a></p>
+            <p class="news__item__date">{{ .PublishDate | time.Format "Monday, Jan 2, 2006" }}</p>
+          </div>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </section>
+{{ end }}

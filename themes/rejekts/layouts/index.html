@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ with .Site.Params }}
+
+<main>
+    {{ partial "hero.html" . }}
+    {{ partial "timer.html" . }}
+    {{ partial "about.html" . }}
+    {{ partial "schedule.html" . }}
+    {{/*  {{ partial "announcements.html" $ }}  */}}
+    {{/*  {{ partial "speakers.html" $ }}
+    {{ partial "program_committee" $ }}  */}}
+    {{ partial "tickets.html" . }}
+    {{ partial "coc.html" $ }}
+    {{- if ne .event.state "archived" -}}
+    {{      partial "participation.html" . }}
+    {{- end -}}
+    {{ partial "sponsors.html" . }}
+    {{ partial "media.html" . }}
+    {{ if .event.venue.name }}{{ partial "venue.html" . }}{{ end }}
+</main>
+
+{{ end }}
+{{ end }}

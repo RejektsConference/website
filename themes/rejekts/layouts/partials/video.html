@@ -1,0 +1,12 @@
+<h2 class="video-content__title page-title">
+    {{- if .heading -}}
+    {{ .heading }}
+    {{- else -}}
+    Video from {{ .city }}
+    {{- end -}}
+</h2>
+<div class="video-content__wrapper embed-responsive embed-responsive-4by3">
+  <iframe width="560" height="315" src="{{ .link }}" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+</div>

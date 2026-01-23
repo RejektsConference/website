@@ -1,0 +1,40 @@
+<section class="event-schedule" id="schedule">
+  <div class="event-schedule__container">
+    <div class="event-schedule__title-wrapper">
+      <h2 class="event-schedule__title"><a style="color:white;" href="#schedule">Event_Schedule</a></h2>
+      <img src="/images/schedule-title-decoration.svg" alt="title decoration">
+    </div>
+    <div class="event-schedule__cfp">
+      {{ with .participation }}
+      <p><span>CFP opens</span> - {{ .opens }}</p>
+      <p><span>CFP closes</span> - {{ .closes }}</p>
+    </div>
+    {{ end }}
+
+    {{ with .event.schedule }}
+    {{  $time := (time .datetime ) }}
+    {{    range .days }}
+    <h3 class="event-schedule__date">{{ printf "%s, %s %d" $time.Weekday $time.Month $time.Day }}</h3>
+    {{ range .slots }}
+    <div class="event-schedule__card">
+      <a href="{{ .link }}"><span>{{ .title }}</span></a>
+      <span>{{ .time }}</span>
+    </div>
+    {{    end }}
+    {{ $time = $time.AddDate 0 0 1 }}
+    {{  end }}
+    {{ end }}
+    {{- if eq .event.state "cfppublished" -}}
+    <a href="{{ .event.schedule.link }}"
+      class="sponsor__link mx-auto">See the full presentation schedule</a>
+    {{- else if eq .event.state "cfpopen" -}}
+    <p class="event-schedule__footnote" style="text-transform: uppercase; font-weight: bold;"><a
+        class="general__link button" href="{{ .participation.link }}">CFP IS OPEN!</a></p>
+    {{- else if eq .event.state "cfpclosed" -}}
+    <p class="event-schedule__footnote" style="text-transform: uppercase; font-weight: bold;"><span>Full schedule to be
+        announced {{ .schedule_date }}</span></p>
+    <p class="event-schedule__footnote" style="text-transform: uppercase; font-weight: bold;"><a
+        class="general__link button" href="">CFP IS CLOSED</a></p>
+    {{- end -}}
+  </div>
+</section>

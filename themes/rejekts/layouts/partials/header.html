@@ -1,0 +1,40 @@
+<header class="header">
+
+  {{ partial "topbanner.html" . }}
+
+  <div class="header__container">
+    <div class="header__wrapper">
+      <a class="header__logo" href="{{ .Site.BaseURL }}">
+        {{ $eventLogo := printf "/images/%s/CNR_Logo.svg" .Site.Params.event.code }}
+        {{ $genericLogo := "/images/logo-generic.svg" }}
+        {{ if fileExists (printf "static%s" $eventLogo) }}
+          <img src="{{ $eventLogo }}" width="200" height="47" alt="Cloud Native Rejekts logotype" draggable="false">
+        {{ else }}
+          <img src="{{ $genericLogo }}" width="200" height="47" alt="Cloud Native Rejekts logotype" draggable="false">
+        {{ end }}
+      </a>
+      <div class="header__hamburger">
+        <span></span>
+      </div>
+    </div>
+    <nav class="header__menu menu">
+      <ul class="menu__list">
+        {{ range .Site.Menus.main }}
+        <li class="menu__item"><a class="menu__link" href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    <div class="header__social social">
+      {{ partial "socials.html" .Site.Params }}
+    </div>
+    {{- if eq .Site.Params.event.state "archived" -}}
+    <a class="header__button button button--header" href="">Ticketing closed</a>
+    {{ else if .Site.Params.event.tickets_url }}
+    <a class="header__button button button--header" href="{{ .Site.Params.event.tickets_url }}">Register</a>
+    {{ else }}
+    {{  range where .Site.Params.social "title" "email" }}
+    <a class="header__button button button--header" href="{{ .url }}">Contact</a>
+    {{  end }}
+    {{ end }}
+  </div>
+</header>

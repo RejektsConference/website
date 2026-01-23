@@ -1,0 +1,39 @@
+{{ if not .event.venue.hide }}
+<section class="venue" id="venue">
+    <div class="venue__wrapper">
+    {{ $event_code := .event.code }}
+    {{ with .event.venue }}
+        <div class="venue__wrapper-text">
+            <h2 class="venue__title">The Venue</h2>
+            <div class="venue__place">
+                {{ if .logo }}
+                <img src="/images/{{$event_code}}/{{ .logo }}" width="90" height="90" alt="Venue logo">
+                {{ end }}
+                <p>{{ if .website }}<a href="{{ .website }}">{{ .place }}</a>{{ else }}{{ .place }}{{ end }}</p>
+                {{ if .maplink }}
+                <a class="venue__button venue__button--desktop button button--red" href="{{ .maplink }}"
+                    target="_blank">Get Directions</a>
+                {{ end }}
+            </div>
+            <br><br>
+            <p class="participation__description"> {{ .description }} </p>
+        </div>
+
+        <div class="venue__image-wrapper">
+            <img class="venue__image venue__image--first" src="/images/{{$event_code}}/venue_0.jpg" width="360"
+                height="241" draggable="false">
+            <img class="venue__image venue__image--second" src="/images/{{$event_code}}/venue_1.jpg" width="360"
+                height="241" draggable="false">
+            <img class="venue__image venue__image--third" src="/images/{{$event_code}}/venue_2.jpg" width="360"
+                height="242" draggable="false">
+        </div>
+
+    </div>
+    <div class="venue__wrapper">
+        <div class="venue__map-wrapper">
+            {{ .embedded_map | safeHTML  }}
+        </div>
+    </div>
+    {{ end }}
+</section>
+{{ end }}

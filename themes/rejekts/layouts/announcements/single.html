@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <div class="news__article">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div>
+      <a class="header__button2 button button--header" href="{{ .CurrentSection.Permalink }}">&lt; Back</a>
+    </div>
+  </div>
+{{ end }}

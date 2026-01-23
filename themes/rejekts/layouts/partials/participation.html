@@ -1,0 +1,53 @@
+<section id="participation" class="participation">
+    <div class="participation__title-wrapper">
+        <h2 class="participation__title">call_for_participation</h2>
+        <picture>
+            <source srcset="/images/participation-decoration-desktop.svg" media="(min-width: 1024px)">
+            <img src="/images/participation-title-decoration.svg" width="280" height="50" alt="title decoration"
+                draggable="false">
+        </picture>
+    </div>
+    <div class="participation__wrapper">
+        <div class="participation__image-wrapper">
+            <div class="participation__picture">
+                <img src="/images/participation-photo.jpg" width="820" height="1000" alt="man coding" draggable="false">
+            </div>
+            <div class="participation__background-image">
+                <img src="/images/dots-desktop.svg" width="280" height="50" alt="background dots" draggable="false">
+                -
+            </div>
+        </div>
+        {{- with .participation -}}
+        <div class="participation__text-wrapper">
+            <div class="participation__schelude">
+                <p class="participation__start-day">CFP opens - {{ .opens }}</p>
+                <p class="participation__start-day">CFP closes - {{ .closes }}</p>
+                <p class="participation__start-day ">CFP notifications - {{ .notifications }}</p>
+                <p class="participation__end-day">CFP schedule - {{ .schedule }}</p>
+            </div>
+            <p class="participation__description">{{ .description }}</p>
+            <ul class="participation__list">
+                {{- range .topics -}}
+                <li class="participation__item">{{ . }}</li>
+                {{- end -}}
+            </ul>
+        {{- end -}}
+            {{- $continent := slicestr .event.code 0 2 -}}
+            {{- $year      := slicestr .event.code 2 -}}
+            {{- if or (eq .event.state "cfppublished") (eq .event.state "cfpclosed") -}}
+            <p class="participation__description">The CFP for the Cloud Native Rejekts {{ $continent }} {{ $year }} is now closed.</p>
+            {{- else if eq .event.state "cfppublished" -}}
+            <a class="sponsor__link" href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-eu-2020/talk/">
+                See the full list of talks</a>
+            {{- else if eq .event.state "cfpopen" -}}
+            <p class="participation__description">The CFP for the Cloud Native Rejekts {{ $continent }} {{ $year }} is now open.</p>
+            <a class="header__button2 button button--header" href="{{ .participation.link }}">CFP IS OPEN</a>
+            {{- end -}}
+            {{ with .participation.volunteer_form }}
+            <p class="participation__description">        
+                You can also participate by volunteering! Register your interest with <a href="{{ . }}">this form</a>
+            </p>
+            {{ end }}
+        </div>
+    </div>
+</section>
