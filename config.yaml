@@ -14,7 +14,7 @@ menu:
     #   url: "#speakers"
     #   weight: -110
   #  - identifer: program_committee
-  #    name: Program Committee 
+  #    name: Program Committee
   #    url: "#program_committee"
   #    weight: -100
   #  - identifer: venue
@@ -50,7 +50,7 @@ buildFuture: false
 
 params:
   event:
-    state: cfppublished # allowed states future, next, archived 
+    state: cfppublished # allowed states future, next, archived
     city: Atlanta
     code: NA2025
     description: |
@@ -113,7 +113,7 @@ params:
           link: https://thenewstack.io/
           logo: the-new-stack.png
 
-    
+
     tickets:
       - type: academic
         price:
@@ -122,24 +122,30 @@ params:
           late:
       - type: professional
         price:
-          early: 
-          standard: 
-          late: 
+          early:
+          standard:
+          late:
       - type: corporate
         price:
-          early: 
-          standard: 
-          late: 
+          early:
+          standard:
+          late:
       - type: diversity
         price:
           early: $0
           standard: $0
           late: $0
-  
+
   social:
     - title: Twitter
       url: 'https://twitter.com/rejektsio'
       image: 'twitter-icon'
+    - title: Bluesky
+      url: 'https://bsky.app/profile/rejekts.io'
+      image: 'bluesky-icon'
+    - title: Mastodon
+      url: 'https://hachyderm.io/@Rejekts'
+      image: 'mastodon-icon'
     - title: Instagram
       url: 'https://www.instagram.com/Rejektsio/'
       image: 'instagram-icon'
@@ -166,7 +172,7 @@ params:
                   lightning talks. We welcome topics about...
     link: https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-atlanta-na-atlanta-2025/schedule/
     status: The CFP for the Cloud Native Rejekts NA 2025 is.
-    volunteer_form: https://forms.gle/R1sSnytKmMXBBmDR9 
+    volunteer_form: https://forms.gle/R1sSnytKmMXBBmDR9
     topics: [
       "core concepts",
       "open-source components + tooling",
@@ -183,8 +189,8 @@ params:
 
   media:
     city: Salt Lake City, USA
-    gallery: 
+    gallery:
       link: https://www.flickr.com/photos/181798830@N03/albums/72177720322076407/
-      thumbnail: https://live.staticflickr.com/65535/54154966674_c59129f9f1_6k.jpg 
+      thumbnail: https://live.staticflickr.com/65535/54154966674_c59129f9f1_6k.jpg
     promo:
       video:

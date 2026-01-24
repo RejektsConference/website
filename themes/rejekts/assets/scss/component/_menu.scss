@@ -3,7 +3,7 @@
   width: 100%;
 
   background-color: $colorWhite;
-  
+
 
   @include media-breakpoint-up(lg) {
     width: 55%;
@@ -30,7 +30,7 @@
   @include media-breakpoint-up(lg) {
     padding: 0;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   @media only screen and (min-width: 320px) and (max-width: 991px) and (orientation: landscape) {
@@ -83,7 +83,7 @@
     &::after {
       content: '';
       position: absolute;
-      width: 100%; 
+      width: 100%;
       height: 2px;
       display: block;
       left: 0;
@@ -94,7 +94,7 @@
       transform-origin: left;
       transition: transform .2s ease;
     }
-    
+
     &:hover::after{
       transform: scaleX(1);
     }
