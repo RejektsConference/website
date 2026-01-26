@@ -146,6 +146,9 @@ params:
     - title: Mastodon
       url: 'https://hachyderm.io/@Rejekts'
       image: 'mastodon-icon'
+    - title: LinkedIn
+      url: 'https://www.linkedin.com/company/cloud-native-rejekts/'
+      image: 'linkedin-icon'
     - title: Instagram
       url: 'https://www.instagram.com/Rejektsio/'
       image: 'instagram-icon'
