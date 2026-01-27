@@ -57,7 +57,7 @@ params:
       Cloud Native Rejekts EU 2026 is the b-side conference giving a second chance to the many
       wonderful, but rejected talks leading to KubeCon + CloudNativeCon Europe.
 
-      Cloud Native Rejekts EU will be an in-person conference. We hope to see you in Amsterdam, on March 21 on the heels of KubeCon EU 2026.
+      Cloud Native Rejekts EU 2026 will be an in-person conference. We hope to see you in Amsterdam, on March 21 on the heels of KubeCon + CloudNativeCon Europe.
 
       See you in March!
     prospectus: Rejekts_Sponsorship_Prospectus_EU_2026.pdf
@@ -157,10 +157,10 @@ params:
       image: 'email-icon'
 
   hero:
-    title: Recycle your KubeCon + CloudNativeCon Europe talk here!
+    title: Recycle your KubeCon talk here!
     hashtag: rejektsEU2026
     image: hero-img.svg
-    description:  Cloud Native Rejekts EU offers attendees a weekend of ‘unaccepted’ talks leading into
+    description:  Cloud Native Rejekts EU offers attendees a weekend of 'unaccepted' talks leading into
                   KubeCon + CloudNativeCon Europe. It provides a stage for some of the 89% of talks rejected by KubeCon + CloudNativeCon Europe.
 
   participation:
