@@ -50,7 +50,7 @@ buildFuture: false
 
 params:
   event:
-    state: cfppublished # allowed states future, next, archived
+    state: cfpclosed # allowed states future, next, archived
     city: Amsterdam
     code: EU2026
     description: |
@@ -68,7 +68,7 @@ params:
         in a more relaxed and fun setting than the typical trade show. Want to support the Cloud Native Rejekts EU 2026?
       hide: false
     admission_free: true
-    tickets_url: https://pretix.eu/rejekts/rejektseu26/
+    # tickets_url: https://pretix.eu/rejekts/rejektseu26/
 
     schedule:
       # link: https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-atlanta-na-atlanta-2025/schedule/
@@ -114,27 +114,27 @@ params:
       #     logo: the-new-stack.png
 
 
-    tickets:
-      - type: academic
-        price:
-          early:
-          standard:
-          late:
-      - type: professional
-        price:
-          early:
-          standard:
-          late:
-      - type: corporate
-        price:
-          early:
-          standard:
-          late:
-      - type: diversity
-        price:
-          early: $0
-          standard: $0
-          late: $0
+    # tickets:
+    #   - type: academic
+    #     price:
+    #       early:
+    #       standard:
+    #       late:
+    #   - type: professional
+    #     price:
+    #       early:
+    #       standard:
+    #       late:
+    #   - type: corporate
+    #     price:
+    #       early:
+    #       standard:
+    #       late:
+    #   - type: diversity
+    #     price:
+    #       early: $0
+    #       standard: $0
+    #       late: $0
 
   social:
     - title: Twitter
@@ -166,8 +166,8 @@ params:
   participation:
     opens: Friday, December 19
     closes: Saturday, January 27
-    notifications: TBD
-    schedule: TBD
+    notifications: Thursday, February 5
+    schedule: Monday, February 9
     opens_comment: Opens after KubeCon notifications go out
     closes_comment: Two weeks after CFP opens
     description:  Cloud Native Rejekts welcomes the rejected proposals from KubeCon + CloudNativeCon Europe or new ones
