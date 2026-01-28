@@ -1,9 +1,12 @@
 baseURL: '/'
 languageCode: en-us
-title: Cloud Native Rejekts EU 2026
+title: Cloud Native Rejekts {{< params event.edition >}}
 theme: rejekts
 
 menu:
+  # Main controls the buttons show in the nmain nav bar
+  # You can show / hide them by (un)commenting them here.
+  # The ordering of the menu items is controlled with the `weight` property
   main:
     # - identifer: schedule
     #   name: Schedule
@@ -13,14 +16,14 @@ menu:
     #   name: Speakers
     #   url: "#speakers"
     #   weight: -110
-  #  - identifer: program_committee
-  #    name: Program Committee
-  #    url: "#program_committee"
-  #    weight: -100
-  #  - identifer: venue
-  #    name: Venue
-  #    url: "#venue"
-  #    weight: -100
+    # - identifer: program_committee
+    #   name: Program Committee
+    #   url: "#program_committee"
+    #   weight: -100
+    # - identifer: venue
+    #   name: Venue
+    #   url: "#venue"
+    #   weight: -100
     - identifer: tickets
       name: Tickets
       url: "#tickets"
@@ -50,70 +53,33 @@ buildFuture: false
 
 params:
   event:
-    state: cfpclosed # allowed states future, next, archived
+    # state controls the state of the CFP button. Possible values are: pending, cfpopen, cfpclosed, cfppublished, archived
+    state: cfpclosed
     city: Amsterdam
-    code: EU2026
+    edition: EU 2026
+    code: |
+      {{< params event.edition replace " " "" >}}
     description: |
-      Cloud Native Rejekts EU 2026 is the b-side conference giving a second chance to the many
-      wonderful, but rejected talks leading to KubeCon + CloudNativeCon Europe.
+      Cloud Native Rejekts {{< params event.edition >}} is the b-side conference giving a second chance to the many
+      wonderful, but rejected talks leading to KubeCon + CloudNativeCon.
 
-      Cloud Native Rejekts EU 2026 will be an in-person conference. We hope to see you in Amsterdam, on March 21 on the heels of KubeCon + CloudNativeCon Europe.
+      Cloud Native Rejekts {{< params event.edition >}} will be an in-person conference. We hope to see you in {{< params event.city >}}, on {{< params event.schedule.datetime month >}} {{< params event.schedule.datetime day >}} on the heels of KubeCon + CloudNativeCon.
 
-      See you in March!
-    prospectus: Rejekts_Sponsorship_Prospectus_EU_2026.pdf
+      See you in {{< params event.schedule.datetime month >}}!
+
+    prospectus: Rejekts_Sponsorship_Prospectus_{{< params event.edition replace " " "_" >}}.pdf
     sponsor:
+      hide: false
       pitch: |
         Sponsoring Cloud Native Rejekts not only supports the wider cloud native
         community leading into the week's main event. It's also a chance to present your company, product, and messaging
-        in a more relaxed and fun setting than the typical trade show. Want to support the Cloud Native Rejekts EU 2026?
-      hide: false
-    admission_free: true
+        in a more relaxed and fun setting than the typical trade show. Want to support the Cloud Native Rejekts {{< params event.edition >}}?
+
+    # This controls the ticket button being functional or not. Comment out to disable tickets until available.
     # tickets_url: https://pretix.eu/rejekts/rejektseu26/
 
-    schedule:
-      # link: https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-atlanta-na-atlanta-2025/schedule/
-      datetime: 2026-03-21 09:30:00
-      days:
-        - slots:
-          - title: Talks
-            time: 9:30 AM - 8:30 PM
-
-    venue:
-      name: Academy of Medicine, Georgia Institute of Technology
-      address: Atlanta, GA 30332
-      city: Atlanta, Georgia, USA
-      website: https://studentcenter.gatech.edu/academy-medicine/space/entire-building
-      maplink: https://maps.app.goo.gl/GFDABAM77irxvrRh7
-      embedded_map: |
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d829.0786384199534!2d-84.3877921!3d33.7783744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f50467cecb6c7f%3A0x711487abe50b65de!2sThe%20Historic%20Academy%20of%20Medicine!5e0!3m2!1sen!2sde!4v1761851050438!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      hide: true
-
-    sponsors:
-      # - type: Champion
-      #   sponsors:
-      #   - name: Microsoft
-      #     link: https://microsoft.com/
-      #     logo: microsoft-azure.jpg
-      # - type: Supporter
-      #   sponsors:
-      #   - name: CNCF
-      #     link: https://www.cncf.io/
-      #     logo: cncf.png
-      #   - name: Isovalent
-      #     link: https://isovalent.com/
-      #     logo: isovalent.png
-      # - type: Community
-      #   sponsors:
-      #   - name: Kubesimplify
-      #     link: https://kubesimplify.com/
-      #     logo: Kube_simplify.png
-      # - type: Media
-      #   sponsors:
-      #   - name: The New Stack
-      #     link: https://thenewstack.io/
-      #     logo: the-new-stack.png
-
-
+    # If admission is set to free the ticket prices aren't show, otherwise set the price tiers below
+    admission_free: true
     # tickets:
     #   - type: academic
     #     price:
@@ -135,6 +101,51 @@ params:
     #       early: $0
     #       standard: $0
     #       late: $0
+
+    schedule:
+      # Once the schedule is available uncomment this line and set to URL
+      # link: https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-atlanta-na-atlanta-2025/schedule/
+      datetime: 2026-03-21 09:30:00
+      days:
+        - slots:
+          - title: Talks
+            time: 9:30 AM - 8:30 PM
+
+    venue:
+      hide: true
+      name: Academy of Medicine, Georgia Institute of Technology
+      address: Atlanta, GA 30332
+      city: Atlanta, Georgia, USA
+      website: https://studentcenter.gatech.edu/academy-medicine/space/entire-building
+      maplink: https://maps.app.goo.gl/GFDABAM77irxvrRh7
+      embedded_map: |
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d829.0786384199534!2d-84.3877921!3d33.7783744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f50467cecb6c7f%3A0x711487abe50b65de!2sThe%20Historic%20Academy%20of%20Medicine!5e0!3m2!1sen!2sde!4v1761851050438!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    sponsors:
+      - type: Champion
+        sponsors: []
+        # - name: Microsoft
+        #   link: https://microsoft.com/
+        #   logo: microsoft-azure.jpg
+      - type: Supporter
+        sponsors: []
+        # - name: CNCF
+        #   link: https://www.cncf.io/
+        #   logo: cncf.png
+        # - name: Isovalent
+        #   link: https://isovalent.com/
+        #   logo: isovalent.png
+      - type: Community
+        sponsors: []
+        # - name: Kubesimplify
+        #   link: https://kubesimplify.com/
+        #   logo: Kube_simplify.png
+      - type: Media
+        sponsors: []
+        # - name: The New Stack
+        #   link: https://thenewstack.io/
+        #   logo: the-new-stack.png
+
 
   social:
     - title: Twitter
@@ -158,11 +169,14 @@ params:
 
   hero:
     title: Recycle your KubeCon talk here!
-    hashtag: rejektsEU2026
+    hashtag: |
+      rejekts{{< params event.code >}}
     image: hero-img.svg
-    description:  Cloud Native Rejekts EU offers attendees a weekend of 'unaccepted' talks leading into
-                  KubeCon + CloudNativeCon Europe. It provides a stage for some of the 89% of talks rejected by KubeCon + CloudNativeCon Europe.
+    description:  |
+      Cloud Native Rejekts EU offers attendees a weekend of 'unaccepted' talks leading into
+      KubeCon + CloudNativeCon. It provides a stage for some of the 89% of talks rejected by KubeCon + CloudNativeCon.
 
+  # This controls the details shown for the CFP, primarily the dates it opens, closes and announced
   participation:
     opens: Friday, December 19
     closes: Saturday, January 27
@@ -170,11 +184,11 @@ params:
     schedule: Monday, February 9
     opens_comment: Opens after KubeCon notifications go out
     closes_comment: Two weeks after CFP opens
-    description:  Cloud Native Rejekts welcomes the rejected proposals from KubeCon + CloudNativeCon Europe or new ones
-                  that cover super fresh topics. We offer slots for 30min full-length talks and 5min
-                  lightning talks. We welcome topics about...
+    description:  |
+      Cloud Native Rejekts welcomes the rejected proposals from KubeCon + CloudNativeCon or new ones
+      that cover super fresh topics. We offer slots for 30min full-length talks and 5min
+      lightning talks. We welcome topics about...
     # link: https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-atlanta-na-atlanta-2025/schedule/
-    status: The CFP for the Cloud Native Rejekts EU 2026 is.
     # volunteer_form: https://forms.gle/R1sSnytKmMXBBmDR9
     topics: [
       "core concepts",
@@ -185,11 +199,13 @@ params:
       "etc."
     ]
 
+  # This controls showing of a video at the bottom of the event page
   promo:
     video:
       heading: "Video of past events"
       link: https://www.youtube.com/embed/ZJhnx2kgh80
 
+  # This controls showing a carousel image gallery at the bottom of the page
   media:
     city: Salt Lake City, USA
     gallery:

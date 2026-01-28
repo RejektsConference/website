@@ -32,19 +32,17 @@
                 {{- end -}}
             </ul>
         {{- end -}}
-            {{- $continent := slicestr .event.code 0 2 -}}
-            {{- $year      := slicestr .event.code 2 -}}
             {{- if or (eq .event.state "cfppublished") (eq .event.state "cfpclosed") -}}
-            <p class="participation__description">The CFP for the Cloud Native Rejekts {{ $continent }} {{ $year }} is now closed.</p>
+            <p class="participation__description">The CFP for the Cloud Native Rejekts {{ .event.edition }} is now closed.</p>
             {{- else if eq .event.state "cfppublished" -}}
             <a class="sponsor__link" href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-eu-2020/talk/">
                 See the full list of talks</a>
             {{- else if eq .event.state "cfpopen" -}}
-            <p class="participation__description">The CFP for the Cloud Native Rejekts {{ $continent }} {{ $year }} is now open.</p>
+            <p class="participation__description">The CFP for the Cloud Native Rejekts {{ .event.edition }} is now open.</p>
             <a class="header__button2 button button--header" href="{{ .participation.link }}">CFP IS OPEN</a>
             {{- end -}}
             {{ with .participation.volunteer_form }}
-            <p class="participation__description">        
+            <p class="participation__description">
                 You can also participate by volunteering! Register your interest with <a href="{{ . }}">this form</a>
             </p>
             {{ end }}

@@ -8,6 +8,7 @@
     {{ with .event.sponsors }}
     {{   if (gt (len .) 0) }}
     {{     range . }}
+    {{       if (gt (len .sponsors) 0) }}
     <div class="sponsor_group">
         <div class="sponsor__group-title">{{ .type }}</div>
         <div class="row">
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+    {{       end }}
     {{     end }}
     {{   end }}
     {{ end }}
@@ -34,6 +36,6 @@
     {{ if lt (time .event.schedule.datetime) now }}
         <a class="sponsor__link" href="mailto:lexinadolski@microsoft.com">REACH OUT TO SUPPORT OUR NEXT EVENTS</a>
     {{ else if not .event.sponsor.hide }}
-        <a class="sponsor__link" href="{{ .event.prospectus }}" target="_blank">Learn how to become a sponsor!</a>
+        <a class="sponsor__link" href="{{ .event.prospectus | markdownify }}" target="_blank">Learn how to become a sponsor!</a>
     {{ end }}
 </section>
