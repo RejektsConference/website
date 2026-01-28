@@ -41,6 +41,20 @@
       background-image: url("../../images/about-icon.svg");
       background-repeat: repeat;
     }
+
+    &::after{
+      content: "";
+
+      position: absolute;
+      width: 16px;
+      height: 36px;
+
+      bottom: -5px;
+      right: -76px;
+
+      background-image: url("../../images/about-close.svg");
+      background-repeat: repeat;
+    }
   }
 
   @media (min-width: 1920px){
