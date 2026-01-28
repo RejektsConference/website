@@ -1,0 +1,19 @@
+{{- $key := cond (.IsNamedParams) (.Get "key") (.Get 0) -}}
+{{- $fn := cond (.IsNamedParams) (.Get "function") (.Get 1) -}}
+{{- $param := (index .Site.Params (split $key ".")) -}}
+{{- if (eq $fn "replace") -}}
+{{- $old := (.Get 2) -}}
+{{- $new := (.Get 3) -}}
+{{- replace $param $old $new | markdownify -}}
+{{- else if (eq $fn "month") -}}
+{{- $time := (time $param) -}}
+{{- $time.Month | markdownify -}}
+{{- else if (eq $fn "day") -}}
+{{- $time := (time $param) -}}
+{{- $time.Day | markdownify -}}
+{{- else if (eq $fn "year") -}}
+{{- $time := (time $param) -}}
+{{- $time.Year | markdownify -}}
+{{- else -}}
+{{- $param | markdownify -}}
+{{- end -}}

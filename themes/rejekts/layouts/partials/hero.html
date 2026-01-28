@@ -9,7 +9,7 @@
                 <p class="hero__data">{{ printf "%s %d-%d, %d" $time.Month $time.Day (add $time.Day (sub $numDays 1)) $time.Year }}</p>
             {{- end }}
             <h1 class="hero__title">{{ .hero.title }}</h1>
-            <p class="hero__hashtag">#{{ .hero.hashtag }}</p>
+            <p class="hero__hashtag">#{{ .hero.hashtag | markdownify }}</p>
             {{ $location :=  printf "TBD - %s" .event.city }}
             {{ if .event.venue.hide }}
                 <p class="hero__adress hero__adress--desktop">{{ $location }}</p>
