@@ -179,7 +179,7 @@ params:
   # This controls the details shown for the CFP, primarily the dates it opens, closes and announced
   participation:
     opens: Friday, December 19
-    closes: Saturday, January 27
+    closes: Saturday, January 17
     notifications: Thursday, February 5
     schedule: Monday, February 9
     opens_comment: Opens after KubeCon notifications go out
