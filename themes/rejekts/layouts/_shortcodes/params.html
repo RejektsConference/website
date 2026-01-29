@@ -1,3 +1,15 @@
+{{/*
+  This shortcode is used to render parameters from the site's config.yaml file within other values in the config
+  It can be used in config like this:
+    title: Cloud Native Rejekts {{< params event.edition >}}
+  This will render the `event.edition` value as part of the title.
+
+  This shortcode also supports some helpers to format the value being referenced:
+    * `replace` to replace a substring - e.g. `{{< params event.edition replace " " "_" >}}`
+    * `month` to format the date as month name
+    * `day` to format the date as day of the week
+    * `year` to format the date as year
+*/}}
 {{- $key := cond (.IsNamedParams) (.Get "key") (.Get 0) -}}
 {{- $fn := cond (.IsNamedParams) (.Get "function") (.Get 1) -}}
 {{- $param := (index .Site.Params (split $key ".")) -}}
