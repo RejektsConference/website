@@ -129,14 +129,11 @@ params:
         #   logo: microsoft-azure.jpg
       - type: Supporter
         sponsors: []
-        # - name: CNCF
-        #   link: https://www.cncf.io/
-        #   logo: cncf.png
-        # - name: Isovalent
-        #   link: https://isovalent.com/
-        #   logo: isovalent.png
       - type: Community
-        sponsors: []
+        sponsors:
+        - name: Isovalent
+          link: https://isovalent.com/
+          logo: isovalent.png
         # - name: Kubesimplify
         #   link: https://kubesimplify.com/
         #   logo: Kube_simplify.png
