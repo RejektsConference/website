@@ -16,9 +16,13 @@
                 <ul class="sponsor__list type-{{ lower .type }} list-inline">
                     {{ range first 5 .sponsors }}
                     <li class="sponsor__item list-inline-item">
+                        {{ if .link }}
                         <a href="{{ .link }}" target="_blank" class="sponsor__image-link">
+                        {{ end }}
                             <img src="/images/sponsors/{{ .logo }}" alt="{{ .logo }}" class="sponsor__image">
+                        {{ if .link }}
                         </a>
+                        {{ end }}
                     </li>
                     {{ end }}
                 </ul>
