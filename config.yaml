@@ -134,9 +134,9 @@ params:
         - name: Isovalent
           link: https://isovalent.com/
           logo: isovalent.png
-        # - name: Kubesimplify
-        #   link: https://kubesimplify.com/
-        #   logo: Kube_simplify.png
+        - name: Artem
+          logo: artem.png
+          # link: TBC
       - type: Media
         sponsors: []
         # - name: The New Stack
