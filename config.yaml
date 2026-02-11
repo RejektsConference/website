@@ -135,6 +135,7 @@ params:
           link: https://isovalent.com/
           logo: isovalent.png
         - name: Artem
+          link: https://medium.com/@Artem
           logo: artem.png
           # link: TBC
       - type: Media
