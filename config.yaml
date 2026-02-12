@@ -8,10 +8,10 @@ menu:
   # You can show / hide them by (un)commenting them here.
   # The ordering of the menu items is controlled with the `weight` property
   main:
-    # - identifer: schedule
-    #   name: Schedule
-    #   url: "#schedule"
-    #   weight: -110
+    - identifer: schedule
+      name: Schedule
+      url: "#schedule"
+      weight: -110
     # - identifer: speakers
     #   name: Speakers
     #   url: "#speakers"
@@ -54,7 +54,7 @@ buildFuture: false
 params:
   event:
     # state controls the state of the CFP button. Possible values are: pending, cfpopen, cfpclosed, cfppublished, archived
-    state: cfpclosed
+    state: cfppublished
     city: Amsterdam
     edition: EU 2026
     code: |
@@ -104,12 +104,12 @@ params:
 
     schedule:
       # Once the schedule is available uncomment this line and set to URL
-      # link: https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-atlanta-na-atlanta-2025/schedule/
+      link: https://cloud-native-rejekts-eu-2026.sessionize.com/schedule/day/20260321
       datetime: 2026-03-21 09:30:00
       days:
         - slots:
           - title: Talks
-            time: 9:30 AM - 8:30 PM
+            time: 9:00 AM - 6:00 PM
 
     venue:
       hide: true
