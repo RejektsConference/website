@@ -110,18 +110,18 @@
 
     &::before {
       content: "";
-  
+
       position: absolute;
-  
+
       width: 8px;
       height: 20px;
       left: 5px;
       top: calc(50% - 12px);
-  
+
       transform: skew(-30deg);
-  
+
       background-color: $colorRed;
-    } 
+    }
 
     &:last-child {
       margin-right: 30px;
@@ -172,7 +172,7 @@
     transform: skew(-30deg);
 
     background-color: $colorRed;
-  } 
+  }
 
   @include media-breakpoint-up(lg){
     font-size: 2rem;
@@ -186,7 +186,7 @@
   padding: 15px 45px 10px;
 
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 
   font-size: 1.6rem;
   line-height: 1.3em;
@@ -207,7 +207,7 @@
     background-color: $colorRed;
   }
 
-  &:nth-of-type(2n) {
+  &:last-of-type {
     margin-bottom: 50px;
   }
 
@@ -228,7 +228,7 @@
     font-size: 2rem;
     line-height: 1em;
 
-    &:nth-of-type(2n) {
+    &:last-of-type {
       margin-bottom: 60px;
     }
 
