@@ -9,16 +9,17 @@
                 {{ if .logo }}
                 <img src="/images/{{$event_code}}/{{ .logo }}" width="90" height="90" alt="Venue logo">
                 {{ end }}
-                <p>{{ if .website }}<a href="{{ .website }}">{{ .place }}</a>{{ else }}{{ .place }}{{ end }}</p>
-                {{ if .maplink }}
-                <a class="venue__button venue__button--desktop button button--red" href="{{ .maplink }}"
-                    target="_blank">Get Directions</a>
-                {{ end }}
+                <p>{{ if .website }}<a href="{{ .website }}">{{ .place }}</a>{{ else }}{{ .name }}{{ end }}</p>
             </div>
+            {{ if .maplink }}
+            <a class="venue__button venue__button--desktop button button--red" href="{{ .maplink }}"
+                target="_blank">Get Directions</a>
+            {{ end }}
             <br><br>
             <p class="participation__description"> {{ .description }} </p>
         </div>
 
+        {{ if .showImages }}
         <div class="venue__image-wrapper">
             <img class="venue__image venue__image--first" src="/images/{{$event_code}}/venue_0.jpg" width="360"
                 height="241" draggable="false">
@@ -27,6 +28,7 @@
             <img class="venue__image venue__image--third" src="/images/{{$event_code}}/venue_2.jpg" width="360"
                 height="242" draggable="false">
         </div>
+        {{ end }}
 
     </div>
     <div class="venue__wrapper">

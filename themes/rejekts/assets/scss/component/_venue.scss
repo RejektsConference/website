@@ -9,7 +9,7 @@
     padding-bottom: 90px;
 
     &::after {
-      content: "}";
+      content: "";
 
       position: absolute;
 
@@ -45,7 +45,7 @@
     height: 22px;
     left: 0px;
     top: calc(50% - 11px);
-    
+
     transform: skew(-30deg);
     background: $colorRed;
   }
@@ -61,7 +61,7 @@
     font-size: 4.8rem;
 
     &::after {
-      
+
       height: 30px;
 
       top: calc(50% - 15px);
@@ -75,7 +75,7 @@
   @include media-breakpoint-up(md) {
     width: 100%;
   }
-  
+
   @include media-breakpoint-up(lg) {
     display: flex;
     align-items: flex-end;
@@ -103,11 +103,12 @@
   font-weight: $fontBold;
 
   vertical-align: middle;
-  
+
 }
 
 .venue__button--desktop {
   display: none;
+  margin-left: 0;
   @include media-breakpoint-up(md) {
     display: flex;
   }
@@ -167,10 +168,10 @@
 .venue__map-wrapper {
   position: relative;
   margin:0 auto 30px;
-  max-width: 460px;
+  // max-width: 460px;
 
   @include media-breakpoint-up(md) {
-    width: 40%;
+    width: 100%;
     margin: 0;
   }
 
@@ -226,7 +227,7 @@
       background-image: url("../../images/map-pin.svg");
       background-repeat: no-repeat;
     }
-  
+
 
   @include media-breakpoint-up(lg) {
     width: 360px;
@@ -348,12 +349,6 @@
     &:first-child {
       margin-bottom: -40px;
     }
-  }
-}
-
-.venue__wrapper-text {
-  @include media-breakpoint-up(md) {
-    width: 40%;
   }
 }
 
