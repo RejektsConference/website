@@ -150,10 +150,9 @@ params:
         - name: Artem
           link: https://medium.com/@Artem
           logo: artem.png
-        # TODO: Waiting on logo
-        # - name: FikaWorks
-        #   link: https://fika.works
-        #   logo: FikaWorks.png
+        - name: FikaWorks
+          link: https://fika.works
+          logo: FikaWorks.png
       - type: Media
         sponsors:
         - name: CloudNative.Now
