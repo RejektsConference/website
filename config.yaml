@@ -136,6 +136,9 @@ params:
         - name: ProsperOps
           link: https://www.prosperops.com
           logo: ProsperOps.png
+        - name: Edera
+          link: https://edera.dev
+          logo: Edera.svg
         # TODO: Waiting on logo
         # - name: Miro
         #   link: https://miro.com/
@@ -145,10 +148,6 @@ params:
         - name: Microsoft
           link: https://microsoft.com/
           logo: MS-Azure.png
-        # TODO: Waiting on logo
-        # - name: Edera
-        #   link: https://edera.dev
-        #   logo: Edera.png
       - type: Community
         sponsors:
         - name: Isovalent
