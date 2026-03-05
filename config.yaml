@@ -139,10 +139,9 @@ params:
         - name: Edera
           link: https://edera.dev
           logo: Edera.svg
-        # TODO: Waiting on logo
-        # - name: Miro
-        #   link: https://miro.com/
-        #   logo: Miro.png
+        - name: Miro
+          link: https://miro.com/
+          logo: Miro.png
       - type: Supporter
         sponsors:
         - name: Microsoft
@@ -164,6 +163,9 @@ params:
         - name: CloudNative.Now
           link: https://cloudnative.now
           logo: CloudNativeNow.png
+        - name: Cloud Native Days Romania
+          link: https://cloudnativedays.ro
+          logo: CloudNativeDaysRomania.png
 
 
   social:
