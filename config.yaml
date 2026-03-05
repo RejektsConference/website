@@ -119,7 +119,7 @@ params:
 
     venue:
       hide: false
-      showImages: false
+      showImages: true
       name: Miro HQ
       address: Fred. Roeskestraat 100, 1076 ED Amsterdam
       city: Amsterdam, Netherlands
