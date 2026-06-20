@@ -131,6 +131,10 @@ function popup(popupId, options={}) {
   const { delay=1000, cookieExpire=7, cookieName} = options;
 
   let modal = document.getElementById(popupId);
+  if (!modal) {
+    return;
+  }
+
   let cookieDate = 0;
 
   if (cookieName) {
