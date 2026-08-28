@@ -38,8 +38,10 @@
     {{- end }}
 
     {{ if lt (time .event.schedule.datetime) now }}
-        <a class="sponsor__link" href="mailto:lexinadolski@microsoft.com">REACH OUT TO SUPPORT OUR NEXT EVENTS</a>
-    {{ else if not .event.sponsor.hide }}
+        <a class="sponsor__link" href="mailto:sponsorship@rejekts.io">REACH OUT TO SUPPORT OUR NEXT EVENTS</a>
+    {{ else if (fileExists (printf "static/%s" .event.prospectus | markdownify)) }}
         <a class="sponsor__link" href="{{ .event.prospectus | markdownify }}" target="_blank">Learn how to become a sponsor!</a>
+    {{ else }}
+        <a class="sponsor__link" href="mailto:sponsorship@rejekts.io">REACH OUT TO SUPPORT OUR NEXT EVENTS</a>
     {{ end }}
 </section>

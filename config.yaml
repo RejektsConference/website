@@ -8,10 +8,10 @@ menu:
   # You can show / hide them by (un)commenting them here.
   # The ordering of the menu items is controlled with the `weight` property
   main:
-    - identifer: schedule
-      name: Schedule
-      url: "#schedule"
-      weight: -110
+    # - identifer: schedule
+    #   name: Schedule
+    #   url: "#schedule"
+    #   weight: -110
     # - identifer: speakers
     #   name: Speakers
     #   url: "#speakers"
@@ -24,18 +24,18 @@ menu:
     #   name: Venue
     #   url: "#venue"
     #   weight: -100
-    - identifer: tickets
-      name: Tickets
-      url: "#tickets"
-      weight: -95
+    # - identifer: tickets
+    #   name: Tickets
+    #   url: "#tickets"
+    #   weight: -95
     - identifer: conduct
       name: Code of Conduct
       url: "#conduct"
       weight: -90
-    - identifer: participation
-      name: CFP
-      url: "#participation"
-      weight: -85
+    # - identifer: participation
+    #   name: CFP
+    #   url: "#participation"
+    #   weight: -85
     - identifer: sponsorship
       name: Sponsors
       url: "#sponsor"
@@ -43,7 +43,7 @@ menu:
 
 permalinks:
   announcements: /announcements/:year/:month/:title/
-  events: /events/:filename/
+  events: /events/:contentbasename/
 
 disableKinds:
 - taxonomy
@@ -54,9 +54,9 @@ buildFuture: false
 params:
   event:
     # state controls the state of the CFP button. Possible values are: pending, cfpopen, cfpclosed, cfppublished, archived
-    state: cfppublished
-    city: Amsterdam
-    edition: EU 2026
+    state: pending
+    city: Barcelona
+    edition: EU 2027
     code: |
       {{< params event.edition replace " " "" >}}
     description: |
@@ -70,13 +70,15 @@ params:
     prospectus: Rejekts_Sponsorship_Prospectus_{{< params event.edition replace " " "_" >}}.pdf
     sponsor:
       hide: false
+      link:
+        hide: false
       pitch: |
         Sponsoring Cloud Native Rejekts not only supports the wider cloud native
         community leading into the week's main event. It's also a chance to present your company, product, and messaging
         in a more relaxed and fun setting than the typical trade show. Want to support the Cloud Native Rejekts {{< params event.edition >}}?
 
     # This controls the ticket button being functional or not. Comment out to disable tickets until available.
-    tickets_url: https://pretix.eu/rejekts/rejektseu26/
+    # tickets_url: https://pretix.eu/rejekts/rejektseu26/
 
     # If admission is set to free the ticket prices aren't show, otherwise set the price tiers below
     admission_free: true
@@ -104,8 +106,8 @@ params:
 
     schedule:
       # Once the schedule is available uncomment this line and set to URL
-      link: https://cloud-native-rejekts-eu-2026.sessionize.com/schedule/day/20260321
-      datetime: 2026-03-21 09:30:00
+      # link: https://cloud-native-rejekts-eu-2026.sessionize.com/schedule/day/20260321
+      datetime: 2027-03-13 09:30:00
       days:
         - slots:
           - title: Registration
@@ -118,7 +120,7 @@ params:
             time: 6:45 PM
 
     venue:
-      hide: false
+      hide: true
       showImages: true
       name: Miro HQ
       address: Fred. Roeskestraat 100, 1076 ED Amsterdam
@@ -128,44 +130,44 @@ params:
       embedded_map: |
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.5973372146077!2d4.8587311!3d52.341450599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e3a6aea737b3%3A0x9d2b23201bf6e8e5!2sMiro!5e0!3m2!1sen!2suk!4v1771253796587!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    sponsors:
-      - type: Champion
-        sponsors: []
-      - type: Partner
-        sponsors:
-        - name: ProsperOps
-          link: https://www.prosperops.com
-          logo: ProsperOps.png
-        - name: Edera
-          link: https://edera.dev
-          logo: Edera.svg
-        - name: Miro
-          link: https://miro.com/
-          logo: Miro.png
-      - type: Supporter
-        sponsors:
-        - name: Microsoft
-          link: https://microsoft.com/
-          logo: MS-Azure.png
-      - type: Community
-        sponsors:
-        - name: Isovalent
-          link: https://isovalent.com/
-          logo: isovalent.png
-        - name: Artem
-          link: https://medium.com/@Artem
-          logo: artem.png
-        - name: FikaWorks
-          link: https://fika.works
-          logo: FikaWorks.png
-      - type: Media
-        sponsors:
-        - name: CloudNative.Now
-          link: https://cloudnative.now
-          logo: CloudNativeNow.png
-        - name: Cloud Native Days Romania
-          link: https://cloudnativedays.ro
-          logo: CloudNativeDaysRomania.png
+    # sponsors:
+    #   - type: Champion
+    #     sponsors: []
+    #   - type: Partner
+    #     sponsors:
+    #     - name: ProsperOps
+    #       link: https://www.prosperops.com
+    #       logo: ProsperOps.png
+    #     - name: Edera
+    #       link: https://edera.dev
+    #       logo: Edera.svg
+    #     - name: Miro
+    #       link: https://miro.com/
+    #       logo: Miro.png
+    #   - type: Supporter
+    #     sponsors:
+    #     - name: Microsoft
+    #       link: https://microsoft.com/
+    #       logo: MS-Azure.png
+    #   - type: Community
+    #     sponsors:
+    #     - name: Isovalent
+    #       link: https://isovalent.com/
+    #       logo: isovalent.png
+    #     - name: Artem
+    #       link: https://medium.com/@Artem
+    #       logo: artem.png
+    #     - name: FikaWorks
+    #       link: https://fika.works
+    #       logo: FikaWorks.png
+    #   - type: Media
+    #     sponsors:
+    #     - name: CloudNative.Now
+    #       link: https://cloudnative.now
+    #       logo: CloudNativeNow.png
+    #     - name: Cloud Native Days Romania
+    #       link: https://cloudnativedays.ro
+    #       logo: CloudNativeDaysRomania.png
 
 
   social:
@@ -199,10 +201,10 @@ params:
 
   # This controls the details shown for the CFP, primarily the dates it opens, closes and announced
   participation:
-    opens: Friday, December 19
-    closes: Saturday, January 17
-    notifications: Thursday, February 5
-    schedule: Monday, February 9
+    opens: Wednesday, December 9
+    closes: Sunday, January 17
+    notifications: Friday, February 5
+    schedule: Monday, February 8
     opens_comment: Opens after KubeCon notifications go out
     closes_comment: Two weeks after CFP opens
     description:  |
@@ -228,9 +230,9 @@ params:
 
   # This controls showing a carousel image gallery at the bottom of the page
   media:
-    city: Salt Lake City, USA
+    city: Amsterdam, The Netherlands
     gallery:
-      link: https://www.flickr.com/photos/181798830@N03/albums/72177720322076407/
-      thumbnail: https://live.staticflickr.com/65535/54154966674_c59129f9f1_6k.jpg
+      link: https://www.flickr.com/photos/181798830@N03/albums/72177720332862399
+      thumbnail: https://live.staticflickr.com/65535/55181531360_923214b621_b.jpg
     promo:
       video:
