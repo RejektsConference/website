@@ -25,7 +25,7 @@
                 <p class="participation__start-day ">CFP notifications - {{ .notifications }}</p>
                 <p class="participation__end-day">CFP schedule - {{ .schedule }}</p>
             </div>
-            <p class="participation__description">{{ .description }}</p>
+            <p class="participation__description">{{ .description | markdownify }}</p>
             <ul class="participation__list">
                 {{- range .topics -}}
                 <li class="participation__item">{{ . }}</li>
