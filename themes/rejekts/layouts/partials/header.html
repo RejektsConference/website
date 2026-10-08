@@ -20,7 +20,11 @@
     <nav class="header__menu menu">
       <ul class="menu__list">
         {{ range .Site.Menus.main }}
-        <li class="menu__item"><a class="menu__link" href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ $url := .URL }}
+        {{ if and (not $.IsHome) (hasPrefix $url "#") }}
+          {{ $url = printf "%s%s" $.Site.Home.RelPermalink $url }}
+        {{ end }}
+        <li class="menu__item"><a class="menu__link" href="{{ $url }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </nav>
